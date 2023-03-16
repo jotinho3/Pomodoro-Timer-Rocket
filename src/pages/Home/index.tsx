@@ -1,8 +1,14 @@
 import { Play } from "phosphor-react";
 import { ButtonCountdownStyled, CountdownContainerStyled, FormContainerStyled, HomeContainerStyled, MinutesAmountInput, Separator, TaskInput } from "./styles";
+import { motion } from 'framer-motion'
 
 export function Home() {
   return (
+    <motion.div 
+    initial={{scale: '0%'}}
+    animate={{scale: '100%', transition: { duration: 0.2}}}
+    exit={{opacity: '0%'}}
+    > 
     <HomeContainerStyled>
       <form action="">
         <FormContainerStyled>
@@ -29,5 +35,6 @@ export function Home() {
         </ButtonCountdownStyled>
       </form>
     </HomeContainerStyled>
+    </motion.div>
   );
 }

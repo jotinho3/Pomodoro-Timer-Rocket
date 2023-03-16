@@ -5,6 +5,7 @@ export const HomeContainerStyled = styled.main`
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 5rem;
 
     form {
         display: flex;

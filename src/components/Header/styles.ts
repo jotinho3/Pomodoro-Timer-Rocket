@@ -30,6 +30,11 @@ export const HeaderContainerStyled = styled.header`
             border-bottom: 3px solid ${props => props.theme['green-500']};
             }
 
+            &:focus {
+                transform: scale(90%);
+               
+            }
+
             &.active {
                 color: ${props => props.theme['green-500']}; 
             }

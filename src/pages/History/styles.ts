@@ -1,3 +1,4 @@
+import { style } from '@mui/system'
 import styled from 'styled-components'
 
 export const HistoryContainer = styled.main`
@@ -70,6 +71,33 @@ export const HistoryList = styled.div`
         }
 
 
+    }
+
+`
+
+const STATUS_COLORS = {
+    yellow: 'yellow-500',
+    green: 'green-500',
+    red: 'red-500',
+} as const // limita o valor da string do objeto STATUS_CONST específicamente para os valores mencionados, sem o 'as const' os valores considerados eram de 'string', agora passam a ser exatamente os valores mencionados
+
+
+interface StatusProps {
+    // statusColor: 'yellow' | 'green' | 'red' estava assim, porém, eu gostaria de especificar para o statusColor que eu quero que seus valores sejam as keys do objeto STATUS_COLORS, então eu coloco: statusColor: keyof typeof STATUS_COLORS
+    statusColor: keyof typeof STATUS_COLORS // 
+}
+
+export const Status = styled.span<StatusProps>`
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &::before {
+        content: '';
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background: ${props => props.theme[STATUS_COLORS[props.statusColor]]};
     }
 
 `

@@ -5,19 +5,22 @@ import { darkTheme } from "./styles/themes/dark";
 import { useState } from "react";
 import { Router } from "./Router";
 import { BrowserRouter } from 'react-router-dom'
+import { CyclesContextProvider } from "./contexts/CyclesContext";
+
 
 
 export function App() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-
-
+  
       <BrowserRouter> 
+       <CyclesContextProvider>
           <Router />
+        </CyclesContextProvider>
       </BrowserRouter>
-     
-
+    
     </ThemeProvider>
+   
   );
 }

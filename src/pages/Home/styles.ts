@@ -5,7 +5,7 @@ export const HomeContainerStyled = styled.main`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 2rem;
 
     form {
         display: flex;

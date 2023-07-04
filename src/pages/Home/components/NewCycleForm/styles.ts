@@ -11,6 +11,11 @@ export const FormContainerStyled = styled.div`
     font-weight: bold;
     flex-wrap: wrap;
     -webkit-font-smoothing: antialiased;
+
+    @media (max-width: 878px) {
+        font-size: 0.875rem;    
+        
+    }
 `
 
 const BaseInput = styled.input`
